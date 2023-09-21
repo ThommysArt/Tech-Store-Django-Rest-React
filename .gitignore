@@ -3,9 +3,12 @@
 ./TechStore/api/__pycache__
 ./TechStore/api/migrations/__pycache__
 ./TechStore/frontend/__pycache__
+./TechStore/TechStore/__pycache__
 
 # node modules
 ./TechStore/frontend/node_modules
+
+# Others
 ./TechStore/frontend/.pnp
 ./TechStore/frontend/.pnp.js
 
