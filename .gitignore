@@ -1,0 +1,27 @@
+
+# Pycache
+./TechStore/api/__pycache__
+./TechStore/api/migrations/__pycache__
+./TechStore/frontend/__pycache__
+
+# node modules
+./TechStore/frontend/node_modules
+./TechStore/frontend/.pnp
+./TechStore/frontend/.pnp.js
+
+# testing
+./TechStore/frontend/coverage
+
+# production
+./TechStore/frontend/build
+
+# misc
+./TechStore/frontend/DS_Store
+./TechStore/frontend/env.local
+./TechStore/frontend/env.development.local
+./TechStore/frontend/env.test.local
+./TechStore/frontend/env.production.local
+
+./TechStore/frontend/npm-debug.log*
+./TechStore/frontend/yarn-debug.log*
+./TechStore/frontend/yarn-error.log*
