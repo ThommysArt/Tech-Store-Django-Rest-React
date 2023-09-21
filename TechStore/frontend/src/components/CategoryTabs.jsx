@@ -1,6 +1,9 @@
 import {
     Tabs,
+    Box,
 } from '@radix-ui/themes';
+
+import GeneralPage from './GeneralPage';
 
 
 export default function CategoryTabs () {
@@ -15,6 +18,12 @@ export default function CategoryTabs () {
                 <Tabs.Trigger value="mobile">Mobile</Tabs.Trigger>
                 <Tabs.Trigger value="tv&home_cinema">TV & Home Cinema</Tabs.Trigger>
             </Tabs.List>
+
+            <Box px="4" pt="3" pb="2">
+                <Tabs.Content value='shop_all'>
+                    <GeneralPage />
+                </Tabs.Content>
+            </Box>
         </Tabs.Root>
     )
 }

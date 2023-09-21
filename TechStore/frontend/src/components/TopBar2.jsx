@@ -26,7 +26,7 @@ export default function TopBar1 () {
                     <TextField.Root radius="medium" size="2">
                         <TextField.Input placeholder="Search..." size="2" />
                     </TextField.Root>
-                    <Button color='indigo' radius='medium' height>Search</Button>
+                    <Button color='indigo' radius='medium'>Search</Button>
                 </Flex>
             </Flex>
             <Separator my="3" size="4" />
