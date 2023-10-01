@@ -3,7 +3,6 @@ import '@radix-ui/themes/styles.css';
 import HomePage from './HomePage';
 
 export default function App() {
-    console.log("The javascript works!")
     return (
         <Theme
             accentColor="indigo"

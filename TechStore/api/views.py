@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Product,Category
 from .serializer import ProductSerializer, CategorySerializer, CreateCategorySerializer, CreateProductSerializer
-
+from .permissions import IsOwner
 # Create your views here.
 
 
@@ -55,6 +55,7 @@ class GetProduct(APIView):
 class GetProductsByCategory(APIView):
     serializer_class = ProductSerializer
     lookup_url_kwargs = 'category'
+    permission_classes = (IsOwner,)
 
     def get(self, request, format=None):
         category = request.GET.get(self.lookup_url_kwargs)
@@ -65,7 +66,11 @@ class GetProductsByCategory(APIView):
                 for product in products:
                     p = ProductSerializer(product).data
                     pdts.append(p)
-                return Response(pdts, status=status.HTTP_200_OK)
+                    content = {
+                        'status': 'owner users',
+                        'data': pdts
+                    }
+                return Response(content, status=status.HTTP_200_OK)
             
             return Response({"Product Not Found": "Invalid Product id"}, status=status.HTTP_404_NOT_FOUND)
         return Response({"Bad Request": "Id parameter not found in request"}, status=status.HTTP_400_BAD_REQUEST)

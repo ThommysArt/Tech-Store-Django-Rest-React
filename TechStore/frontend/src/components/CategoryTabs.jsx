@@ -4,6 +4,7 @@ import {
 } from '@radix-ui/themes';
 
 import GeneralPage from './GeneralPage';
+import LaptopsTab from './LaptopsTab';
 
 
 export default function CategoryTabs () {
@@ -22,6 +23,9 @@ export default function CategoryTabs () {
             <Box px="4" pt="3" pb="2">
                 <Tabs.Content value='shop_all'>
                     <GeneralPage />
+                </Tabs.Content>
+                <Tabs.Content value='computers'>
+                    <LaptopsTab />
                 </Tabs.Content>
             </Box>
         </Tabs.Root>
