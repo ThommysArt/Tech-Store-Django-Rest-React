@@ -13,7 +13,7 @@ class Product(models.Model):
     qty = models.IntegerField(default=0)
     unit_price = models.FloatField(default=0)
     description = models.TextField(default="")
-    image = models.ImageField(default="", upload_to='TechStore/frontend/public/img/')
+    image = models.ImageField(default="", upload_to='frontend/public/img/')
     created_at = models.DateTimeField(default=timezone.now)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 

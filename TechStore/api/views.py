@@ -8,27 +8,42 @@ from .permissions import IsOwner
 # Create your views here.
 
 
-class ProductView(generics.CreateAPIView):
+class ProductView(generics.ListAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
 
-class CategoryView(generics.CreateAPIView):
+class CategoryView(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
-class CreateProductView(APIView):
+class CreateProductView(generics.CreateAPIView):
     serializer_class = CreateProductSerializer
 
     def post(self, request, format=None):
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
-            name = serializer.data.name
-            qty = serializer.data.qty
-            description = serializer.data.description
-            unit_price = serializer.data.unit_price
-            image = serializer.data.image
-            category = serializer.data.category
+            serializer.save()
+            name = serializer.data.get('name')
+            qty = serializer.data.get('qty')
+            description = serializer.data.get('description')
+            unit_price = serializer.data.get('unit_price')
+            image = serializer.data['image']
+            print(serializer.errors)
+
+
+            category_id = serializer.data.get('category')
+            categories = {
+                1 : 'computers',
+                2 : 'tablets',
+                3 : 'cameras',
+                4 : 'audio',
+                5 : 'mobile',
+                6 : 'tv',
+            }
+
+            category_name = categories[category_id]
+            category = Category(id=category_id, name=category_name)
 
             pdt = Product(name=name, qty=qty, description=description, unit_price=unit_price, image=image, category=category)
             pdt.save()
@@ -52,7 +67,7 @@ class GetProduct(APIView):
         return Response({"Bad Request": "Id parameter not found in request"}, status=status.HTTP_400_BAD_REQUEST)
 
 
-class GetProductsByCategory(APIView):
+class GetProductsByCategory(generics.ListAPIView):
     serializer_class = ProductSerializer
     lookup_url_kwargs = 'category'
     permission_classes = (IsOwner,)

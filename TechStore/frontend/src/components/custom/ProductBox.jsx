@@ -1,11 +1,21 @@
 import { AspectRatio, Blockquote, Box, Button, Flex } from "@radix-ui/themes";
 
 export default function ProductBox ({product, index}) {
+
+    function changeImagePath(product) {
+        let filePath = product.image;
+        const imgIndex = filePath.indexOf("img");
+        if (imgIndex !== -1) {
+          return filePath.substring(imgIndex);
+        }
+        return filePath;
+    }
+
     return (
         <Box p='3'>
             <AspectRatio ratio={16/8}>
                 <img
-                    src={product.image}
+                    src={changeImagePath(product)}
                     alt={product.name}
                     style={{
                         objectFit: 'cover',
