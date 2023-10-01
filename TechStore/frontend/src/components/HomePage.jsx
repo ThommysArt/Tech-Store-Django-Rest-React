@@ -2,9 +2,9 @@ import {
     Flex,
 } from '@radix-ui/themes';
 
-import TopBar1 from './TopBar1';
-import TopBar2 from './TopBar2';
-import CategoryTabs from './CategoryTabs';
+import TopBar1 from './custom/TopBar1';
+import TopBar2 from './custom/TopBar2';
+import CategoryTabs from './custom/CategoryTabs';
 
 export default function HomePage () {
     return (

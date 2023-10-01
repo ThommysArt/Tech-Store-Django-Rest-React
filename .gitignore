@@ -3,7 +3,9 @@
 ./TechStore/api/__pycache__
 ./TechStore/api/migrations/__pycache__
 ./TechStore/frontend/__pycache__
+./TechStore/frontend/migrations/__pycache__
 ./TechStore/TechStore/__pycache__
+
 
 # node modules
 ./TechStore/frontend/node_modules
