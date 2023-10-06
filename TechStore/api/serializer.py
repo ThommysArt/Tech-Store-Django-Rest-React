@@ -30,4 +30,4 @@ class CreateProductSerializer(serializers.ModelSerializer):
 class CreateCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ('name')
+        fields = ('id','name')

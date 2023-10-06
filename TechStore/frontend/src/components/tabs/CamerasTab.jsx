@@ -11,12 +11,10 @@ export default class CamerasTab extends Component {
   componentDidMount() {
     let data;
     let pdts;
-    axios.get('http://localhost:8000/api/get-category-pdts?category=3')
+    axios.get('http://localhost:8000/api/get-category-pdts?category=2')
       .then(response => {
         pdts = response.data;
         data = pdts.data;
-        console.log(response);
-        console.log(data)
         this.setState({
           products: data
         });

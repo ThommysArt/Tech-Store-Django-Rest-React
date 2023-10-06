@@ -14,6 +14,7 @@ export default function HomeTab () {
                 backgroundImage: 'url("imgs/photo-1580927752452-89d86da3fa0a.jpeg")',
                 backgroundSize: 'cover',
                 color: 'white',
+                fontWeight: '600',
                 height: '500px',
                 display: 'flex',
                 borderRadius: '20px',
@@ -32,13 +33,14 @@ export default function HomeTab () {
                     backgroundImage: 'url("imgs/Samsung-Galaxy-S23-Ultra-render-4RMD-1.jpg")',
                     backgroundSize: 'cover',
                     color: 'white',
+                    fontWeight: '600',
                     margin: '20px',
                     padding: '20px',
                     width: '550px',
                     height: '400px',
                     borderRadius: '20px',
                 }}>
-                    <h6>Holiday deals</h6>
+                    <h3>Holiday deals</h3>
                     <p style={{fontSize: '32px', padding: '20px', paddingLeft: '20px'}}>
                         Up to 30%<br/>
                         off your<br/>
@@ -51,13 +53,14 @@ export default function HomeTab () {
                     backgroundImage: 'url("imgs/Best-gaming-headset-Razer-BlackShark_V2.jpg")',
                     backgroundSize: 'cover',
                     color: 'white',
+                    fontWeight: '600',
                     margin: '20px',
                     padding: '20px',
                     width: '550px',
                     height: '400px',
                     borderRadius: '20px',
                 }}>
-                    <h6>New Arrivals</h6>
+                    <h3>New Arrivals</h3>
                     <p style={{fontSize: '32px', padding: '20px', paddingLeft: '20px'}}>
                         Take your<br/>
                         music<br/>
@@ -68,14 +71,15 @@ export default function HomeTab () {
                 <div style={{
                     backgroundImage: 'url("imgs/mchin_180905_4061_0009.jpg")',
                     backgroundSize: 'cover',
-                    color: 'black',
+                    color: 'white',
+                    fontWeight: '600',
                     margin: '20px',
                     padding: '20px',
                     width: '550px',
                     height: '400px',
                     borderRadius: '20px',
                 }}>
-                    <h6>Laptop deals</h6>
+                    <h3>Laptop deals</h3>
                     <p style={{fontSize: '32px', padding: '20px', paddingLeft: '20px'}}>
                         Get<br/>
                         The Peak<br/>
@@ -88,14 +92,15 @@ export default function HomeTab () {
                 <div style={{
                     backgroundImage: 'url("imgs/Odyssey-G9_2.jpg")',
                     backgroundSize: 'cover',
-                    color: 'black',
+                    color: 'white',
+                    fontWeight: '600',
                     margin: '20px',
                     padding: '20px',
                     width: '550px',
                     height: '400px',
                     borderRadius: '20px',
                 }}>
-                    <h6>Top selling</h6>
+                    <h3>Top selling</h3>
                     <p style={{fontSize: '32px', padding: '20px', paddingLeft: '20px'}}>
                         Explore<br/>
                         The Limits<br/>
@@ -109,13 +114,14 @@ export default function HomeTab () {
                     backgroundImage: 'url("imgs/02wXwvXTDUOJQjGasSStPB3-1..v1648144429.jpg")',
                     backgroundSize: 'cover',
                     color: 'white',
+                    fontWeight: '600',
                     margin: '20px',
                     padding: '20px',
                     width: '550px',
                     height: '400px',
                     borderRadius: '20px',
                 }}>
-                    <h6>Drones & Cameras</h6>
+                    <h3>Drones & Cameras</h3>
                     <p style={{fontSize: '32px', padding: '20px', paddingLeft: '20px'}}>
                         Highest End<br/>
                         Cameras<br/>
@@ -129,13 +135,14 @@ export default function HomeTab () {
                     backgroundImage: 'url("imgs/Charge5.webp")',
                     backgroundSize: 'cover',
                     color: 'white',
+                    fontWeight: '600',
                     margin: '20px',
                     padding: '20px',
                     width: '550px',
                     height: '400px',
                     borderRadius: '20px',
                 }}>
-                    <h6>Speakers</h6>
+                    <h3>Speakers</h3>
                     <p style={{fontSize: '32px', padding: '20px', paddingLeft: '20px'}}>
                         Full Base,<br/>
                         High Quality,<br/>

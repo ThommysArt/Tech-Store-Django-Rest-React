@@ -11,7 +11,7 @@ export default class TabletsTab extends Component {
   componentDidMount() {
     let data;
     let pdts;
-    axios.get('http://localhost:8000/api/get-category-pdts?category=2')
+    axios.get('http://localhost:8000/api/get-category-pdts?category=9')
       .then(response => {
         pdts = response.data;
         data = pdts.data;

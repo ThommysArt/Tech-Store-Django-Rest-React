@@ -17,7 +17,7 @@ class CategoryView(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
-class CreateProductView(generics.CreateAPIView):
+class CreateProductView(APIView):
     serializer_class = CreateProductSerializer
 
     def post(self, request, format=None):
@@ -40,16 +40,31 @@ class CreateProductView(generics.CreateAPIView):
                 4 : 'audio',
                 5 : 'mobile',
                 6 : 'tv',
+                7 : 'desktop',
+                8 : 'drones',
+                9 : 'tablets',
             }
 
             category_name = categories[category_id]
             category = Category(id=category_id, name=category_name)
 
             pdt = Product(name=name, qty=qty, description=description, unit_price=unit_price, image=image, category=category)
-            pdt.save()
 
             return Response(ProductSerializer(pdt).data, status=status.HTTP_201_CREATED)
         
+
+class CreateCategoryView(APIView):
+    serializer_class = CreateCategorySerializer
+
+    def post(self, request, format=None):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            category_id = serializer.data.get('id')
+            name = serializer.data.get('name')
+            category = Category(id=category_id, name=name)
+            return Response(CategorySerializer(category).data, status=status.HTTP_201_CREATED)
+    
 
 class GetProduct(APIView):
     serializer_class = ProductSerializer
