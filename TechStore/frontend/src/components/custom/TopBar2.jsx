@@ -7,9 +7,11 @@ import {
     TextField,
     Link,
 } from '@radix-ui/themes';
+import ProductSearch from './ProductSearch';
 
 
 export default function TopBar1 () {
+
     return (
         <Box width="100%" height='1'>
             <Flex gap="9" align="center">
@@ -17,15 +19,7 @@ export default function TopBar1 () {
                 <Flex gap='9'></Flex>
                 <Flex gap='9'></Flex>
                 <Flex>
-                    <TextField.Root radius="medium" size="3"  style={{ width: '300px'}}>
-                        <TextField.Input placeholder="Search..." size="2" />
-                    </TextField.Root>
-                    <Button radius='medium' style={{ 
-                    borderTopLeftRadius : '0',
-                    borderBottomLeftRadius : '0',
-                    }}>
-                    Search
-                    </Button>
+                    <ProductSearch/>
                 </Flex>
                 <Flex gap='9'></Flex>
                 <Flex gap='9'></Flex>

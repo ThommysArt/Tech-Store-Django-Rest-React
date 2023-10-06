@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { DropdownMenu } from '@radix-ui/react-dropdown-menu';
-import { TextField, Flex, Button } from '@radix-ui/themes';
+import { TextField, Flex, Button, DropdownMenu, Separator, Dialog } from '@radix-ui/themes';
+import ProductSearchDialog from './ProductSearchDialog';
 
 const ProductSearch = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,34 +36,40 @@ const ProductSearch = () => {
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenu.Trigger>
+    <DropdownMenu.Root>
         <Flex>
-          <TextField
-            radius="medium"
-            size="3"
-            style={{ width: '300px' }}
-            value={searchTerm}
-            onChange={handleInputChange}
-            placeholder="Search..."
-          />
-          <Button
-            radius="medium"
-            style={{
-              borderTopLeftRadius: '0',
-              borderBottomLeftRadius: '0',
-            }}
-          >
+          <TextField.Root radius="medium" size="3"  style={{ width: '300px'}}>
+            <TextField.Input 
+                value={searchTerm}
+                onChange={handleInputChange}
+                placeholder="Search..." 
+                size="2" />
+          </TextField.Root>
+          <DropdownMenu.Trigger>
+            <Button 
+              radius='medium' 
+              style={{ 
+                borderTopLeftRadius : '0',
+                borderBottomLeftRadius : '0',
+              }}>
             Search
-          </Button>
+            </Button>
+          </DropdownMenu.Trigger>
         </Flex>
-      </DropdownMenu.Trigger>
       <DropdownMenu.Content>
-        {filteredProducts.map((product) => (
-          <div key={product.id}>{product.name}</div>
-        ))}
+        <Dialog.Root>
+          {filteredProducts.map((product) => (
+            <div>
+              <Dialog.Trigger>
+                <DropdownMenu.Item key={product.id}>{product.name}</DropdownMenu.Item>
+              </Dialog.Trigger>
+              <DropdownMenu.Separator />
+            </div>
+          ))}
+          <ProductSearchDialog />
+        </Dialog.Root>
       </DropdownMenu.Content>
-    </DropdownMenu>
+    </DropdownMenu.Root>
   );
 };
 
