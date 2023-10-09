@@ -30,3 +30,7 @@
 ./TechStore/frontend/npm-debug.log*
 ./TechStore/frontend/yarn-debug.log*
 ./TechStore/frontend/yarn-error.log*
+
+# images
+./TechStore/frontend/public/img
+./TechStore/frontend/public/imgs

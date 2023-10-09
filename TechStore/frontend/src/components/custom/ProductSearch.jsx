@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Flex, Button, DropdownMenu, Separator, Dialog } from '@radix-ui/themes';
-import ProductSearchDialog from './ProductSearchDialog';
+
 
 const ProductSearch = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
-  // Fetch product data from the API (replace 'api-url' with your actual API URL)
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -57,17 +56,13 @@ const ProductSearch = () => {
           </DropdownMenu.Trigger>
         </Flex>
       <DropdownMenu.Content>
-        <Dialog.Root>
-          {filteredProducts.map((product) => (
-            <div>
-              <Dialog.Trigger>
-                <DropdownMenu.Item key={product.id}>{product.name}</DropdownMenu.Item>
-              </Dialog.Trigger>
-              <DropdownMenu.Separator />
-            </div>
-          ))}
-          <ProductSearchDialog />
-        </Dialog.Root>
+        {filteredProducts.map((product) => (
+          <div>
+            <DropdownMenu.Item key={product.id}>{product.name}</DropdownMenu.Item>
+            {/* Function to make sure the clicked item in the dropdown redirects to the right tab and product box*/}
+            <DropdownMenu.Separator />
+          </div>
+        ))}
       </DropdownMenu.Content>
     </DropdownMenu.Root>
   );
